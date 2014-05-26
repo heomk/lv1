@@ -4,45 +4,78 @@
 <meta charset="utf-8">
 <title>..</title>
 <style>
-	body {font-size: small;	font-family: Arial, '맑은 고딕';}
+	body {	
+		font-family: Arial, '맑은 고딕';
+		font-size: small;
+	}
+
+	h1 {
+		border-bottom: 1px solid #333; 
+	}
+
+	p {
+		margin: 0; 
+	}
+
+	.form1 {
+		padding: .5em 1em;
+		border: 1px dashed #ddd; 
+	}
 </style>
 </head>
 <body>
+
+
+<h1>단품</h1>
+
+
+<dl>
+	<dt>상품명</dt>
+	<dd>[ANNINA]쿨링 밴딩 팬츠 1+1</dd>
+	<dt>상품이미지</dt>
+	<dd><img src="http://image.gsshop.com/image/67/57/6757226_N1.jpg" alt="쿨링 밴딩 팬츠 1+1 이미지" /></dd>
+	<dt>판매가격</dt>
+	<dd>24,800원</dd>
+	<dt>카드할인가</dt>
+	<dd>23,560원 [BC카드 5%]</dd>
+</dl>
  
-<form action="" method="get" id="form1">
+<form action="./product-order.gs" method="get" id="form1" class="form1">
+	<p>
+		<label for="product_select">종류선택</label>
+		<select id="product_select" name="">
+			<option>Black/Black_s</option>
+			<option>Black/Black_M</option>
+			<option>Black/Black_L</option>
+			<option>Black/Red_s</option>
+		</select>
+	</p>
+	<p>
+		<label for="qtyNum">수량선택</label>
+		<select id="qtyNum" name="">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+		</select>
+	</p>
+
 	<fieldset>
-		<legend>상품구매하기</legend>
-			<dl>
-			<dt>[ANNINA]쿨링 밴딩 팬츠 1+1</dt>
-			<dd><img src="http://image.gsshop.com/image/67/57/6757226_N1.jpg" alt="쿨링 밴딩 팬츠 1+1 이미지" /></dd>
-			<dd>판매가격 <span>24,800원</span></dd>
-			<dd>카드할인가 <span>23,560원</span><span>BC카드 5%</span></dd>
-			<dd>
-				<label for="product_select">종류선택</label>
-				<select id="product_select" name="">
-					<option>Black/Black_s</option>
-					<option>Black/Black_M</option>
-					<option>Black/Black_L</option>
-					<option>Black/Red_s</option>
-				</select>
-			</dd>
-			<dd>
-				<label for="qtyNum">수량선택</label>
-				<select id="qtyNum" name="">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-				</select>
-			</dd>
-		</dl>
-
-		<label for="buyBtn"><input type="radio" id="buyBtn" name="buyForm" />구매하기</label>
-		<label for="basketBtn"><input type="radio" id="basketBtn" name="buyForm" />장바구니</label>
-		<button type="button">찜하기</button>
-		<input type="submit" value="전송" />	
-
+		<legend>전송 타입선택</legend>
+		<p>
+			<input type="radio" name="buyForm" id="buyBtn" value="buyBtn">
+			<label for="buyBtn">구매하기</label>
+			
+			<input type="radio" name="buyForm" id="basketBtn" value="baskeBtn">
+			<label for="basketBtn">장바구니</label>
+			
+			<input type="radio" name="buyForm" id="saveBtn" value="saveBtn">
+			<label for="saveBtn">찜하기</label>
+			
+		</p>
 	</fieldset>
+
+	<p><input type="submit" value="전송"></p>
 </form>
 
 </body>
